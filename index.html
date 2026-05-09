@@ -426,70 +426,65 @@
       line-height: 1.5;
     }
 
-    /* ─── ORGANIZERS ─────────────────────────────────────── */
-    .org-content {
-      max-width: 680px;
-      margin-bottom: 48px;
-    }
-    .org-content h2 {
-      font-family: var(--font-display);
-      font-size: clamp(26px, 3.5vw, 40px);
-      font-weight: 400;
-      letter-spacing: .01em;
-      text-transform: uppercase;
-      line-height: 1.05;
-      margin-bottom: 12px;
-    }
-    .org-content p {
-      font-size: 16px;
-      color: var(--grey);
-    }
-    .org-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-    .org-logo-badge {
+    /* ─── SPONSOR TICKER ─────────────────────────────────── */
+    .sponsor-ticker {
       background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px 24px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      overflow: hidden;
+      position: relative;
     }
-    .sponsor-strip-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 16px;
+    .sponsor-ticker::before,
+    .sponsor-ticker::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
     }
-    .sponsor-row {
+    .sponsor-ticker::before {
+      left: 0;
+      background: linear-gradient(to right, var(--white), transparent);
+    }
+    .sponsor-ticker::after {
+      right: 0;
+      background: linear-gradient(to left, var(--white), transparent);
+    }
+    .ticker-track {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       align-items: center;
+      gap: 0;
+      width: max-content;
+      animation: ticker 28s linear infinite;
     }
-    .sponsor-tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 18px;
-      font-size: 13px;
-      font-weight: 600;
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      font-size: 15px;
+      font-weight: 800;
       color: var(--grey);
-      filter: grayscale(1);
-      opacity: .6;
-      transition: var(--transition);
+      letter-spacing: .02em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: color var(--transition);
+      cursor: default;
+      border-right: 1px solid var(--border);
     }
-    .sponsor-tag:hover {
-      filter: grayscale(0);
-      opacity: 1;
-      color: var(--text);
-      border-color: var(--blue);
+    .ticker-item:hover { color: var(--blue); }
+    .ticker-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      margin-right: 10px;
+      flex-shrink: 0;
     }
 
     /* ─── FORM SECTION ───────────────────────────────────── */
@@ -814,31 +809,34 @@
   </div>
 </section>
 
-<!-- ─── ORGANIZERS ─────────────────────────────────────── -->
-<section class="alt" id="organisers">
-  <div class="container">
-    <div class="section-label fade-up">Organised by</div>
-    <div class="org-content fade-up">
-      <h2>Built by the student community</h2>
-      <p>In collaboration with two Lovable Ambassadors and the EurHackNL committee.</p>
-    </div>
-    <div class="org-logos fade-up">
-      <div class="org-logo-badge">Erasmus Tech Community</div>
-      <div class="org-logo-badge">Erasmus AI Society</div>
-    </div>
-    <div class="fade-up">
-      <p class="sponsor-strip-label">Confirmed sponsors</p>
-      <div class="sponsor-row">
-        <span class="sponsor-tag">Lovable</span>
-        <span class="sponsor-tag">Miro</span>
-        <span class="sponsor-tag">DEPT</span>
-        <span class="sponsor-tag">ING</span>
-        <span class="sponsor-tag">Heineken</span>
-        <span class="sponsor-tag">BCG X</span>
-      </div>
-    </div>
+<!-- ─── SPONSOR TICKER ─────────────────────────────────── -->
+<div class="sponsor-ticker" aria-label="Our sponsors">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="ticker-dot"></span>DEPT</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Lovable</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Miro</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>ElevenLabs</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>BCG X</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>BDO</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Xolo</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>NN Group</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>ING</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Heineken</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Upstream</div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span class="ticker-dot"></span>DEPT</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Lovable</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Miro</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>ElevenLabs</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>BCG X</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>BDO</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Xolo</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>NN Group</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>ING</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Heineken</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Upstream</div>
   </div>
-</section>
+</div>
 
 <!-- ─── FORM ───────────────────────────────────────────── -->
 <section class="form-section" id="apply">
