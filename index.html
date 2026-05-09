@@ -855,64 +855,9 @@
     <p class="form-sub fade-up" style="transition-delay:.10s">Fill in the form below. We'll be in touch within a few days.</p>
 
     <div class="form-card fade-up" style="transition-delay:.14s">
-      <form id="volunteerForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">Full name</label>
-            <input type="text" id="fname" name="name" placeholder="Jane Doe" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="jane@university.nl" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="uni">University</label>
-            <input type="text" id="uni" name="university" placeholder="Erasmus University Rotterdam" required />
-          </div>
-          <div class="form-group">
-            <label for="program">Study program</label>
-            <input type="text" id="program" name="program" placeholder="BSc Computer Science" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Availability</label>
-          <div class="checkbox-group">
-            <label class="checkbox-item">
-              <input type="checkbox" name="availability" value="may18" />
-              Sunday May 18 (full day)
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="availability" value="may19" />
-              Monday May 19 (full day)
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="availability" value="both" />
-              Both days
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="why">Why do you want to volunteer?</label>
-          <textarea id="why" name="why" rows="3" placeholder="Tell us a bit about your motivation..."></textarea>
-        </div>
-        <div class="form-group">
-          <label for="source">How did you hear about EurHackNL?</label>
-          <select id="source" name="source">
-            <option value="" disabled selected>Select an option</option>
-            <option value="instagram">Instagram</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="friend">Friend</option>
-            <option value="university">University</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-submit">Submit Application</button>
-        <div class="success-msg" id="successMsg" role="alert">
-          No way, you just applied. Lucky us. We'll be in touch soon!
-        </div>
-      </form>
+      <iframe data-tally-src="https://tally.so/embed/D4AVqb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
+        title="EurHackNL Volunteer Application"></iframe>
     </div>
   </div>
 </section>
@@ -949,21 +894,18 @@
     });
   }, { threshold: 0.12 });
   fadeEls.forEach(el => observer.observe(el));
-
-  document.getElementById('volunteerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name  = document.getElementById('fname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    if (!name || !email) { document.getElementById('fname').reportValidity(); return; }
-    const btn = this.querySelector('.btn-submit');
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    setTimeout(() => {
-      document.getElementById('successMsg').classList.add('show');
-      btn.textContent = 'Application sent ✓';
-      btn.style.background = '#a0ff01';
-    }, 900);
-  });
+</script>
+<script>
+  var d = document, w = "https://tally.so/widgets/embed.js",
+  v = function() {
+    "undefined" != typeof Tally
+      ? Tally.loadEmbeds()
+      : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) { e.src = e.dataset.tallySrc; });
+  };
+  if ("undefined" != typeof Tally) v();
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
+  }
 </script>
 </body>
 </html>
