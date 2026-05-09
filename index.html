@@ -108,7 +108,7 @@
       text-transform: lowercase;
     }
     .logo-mark .logo-hack { color: var(--blue); }
-    .logo-mark .logo-nl   { color: var(--orange); display: block; }
+    .logo-mark .logo-nl   { color: var(--text); display: block; }
 
     .btn {
       display: inline-flex;
@@ -367,6 +367,19 @@
       line-height: 1.65;
     }
 
+    .roles-note {
+      margin-top: 40px;
+      background: var(--bg);
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .roles-note p {
+      font-size: 15px;
+      color: var(--grey);
+      line-height: 1.75;
+    }
+
     /* ─── PERKS ──────────────────────────────────────────── */
     .perks-header { margin-bottom: 48px; }
     .perks-header h2 {
@@ -621,7 +634,7 @@
       font-size: 20px;
       color: var(--white);
     }
-    .footer-logo .logo-mark .logo-nl { color: var(--green); }
+    .footer-logo .logo-mark .logo-nl { color: var(--white); }
     .footer-links {
       display: flex;
       flex-direction: column;
@@ -693,7 +706,7 @@
       <div class="hero-cta-row">
         <a href="#apply" class="btn btn-hero">Apply Now</a>
         <p class="hero-cred">
-          <strong>580+</strong> participants &nbsp;·&nbsp;
+          <strong>500+</strong> participants &nbsp;·&nbsp;
           <strong>8</strong> universities &nbsp;·&nbsp;
           <strong>15+</strong> sponsors
         </p>
@@ -712,12 +725,12 @@
         <p>
           EurHackNL brings together the brightest student minds from across Europe to build, experiment, and compete at the frontier of AI. Organised entirely by students, for students.
           <br /><br />
-          Two days. 580+ builders. Real mentorship from 15+ sponsors. And a volunteer team that makes it all happen — that's where you come in.
+          Two days. 500+ builders. Real mentorship from 15+ sponsors. And a volunteer team that makes it all happen. That is where you come in.
         </p>
       </div>
       <div class="stat-grid fade-up" style="transition-delay:.12s">
         <div class="stat-card">
-          <div class="stat-num">580+</div>
+          <div class="stat-num">500+</div>
           <div class="stat-label">Participants</div>
         </div>
         <div class="stat-card">
@@ -746,45 +759,29 @@
     </div>
     <div class="roles-grid">
       <div class="role-card fade-up" style="transition-delay:.04s">
-        <span class="role-icon">🎟️</span>
-        <h3>Ticket Check-In</h3>
-        <p>Verify participant entry at the door and keep the flow moving smoothly.</p>
+        <span class="role-icon">🤝</span>
+        <h3>Guest Management</h3>
+        <p>Welcome guests and speakers, keep arrivals running smoothly, and make sure everyone feels at home from the moment they walk in.</p>
       </div>
       <div class="role-card fade-up" style="transition-delay:.08s">
-        <span class="role-icon">🎤</span>
-        <h3>Guest & Speaker Support</h3>
-        <p>Welcome guests and assist speakers throughout the event.</p>
+        <span class="role-icon">🗺️</span>
+        <h3>Participant Coordination + Navigation</h3>
+        <p>Help participants find their way around campus and connect them to the right places throughout both days.</p>
       </div>
       <div class="role-card fade-up" style="transition-delay:.12s">
-        <span class="role-icon">🗺️</span>
-        <h3>Participant Navigation</h3>
-        <p>Help attendees find their way around Campus Woudestein.</p>
+        <span class="role-icon">🎟️</span>
+        <h3>Ticket Check-In</h3>
+        <p>Verify participant entry at the door and keep the flow moving efficiently from the start.</p>
       </div>
       <div class="role-card fade-up" style="transition-delay:.16s">
-        <span class="role-icon">🛡️</span>
-        <h3>Conflict Management</h3>
-        <p>Keep the environment safe; escalate issues to the management team when needed.</p>
-      </div>
-      <div class="role-card fade-up" style="transition-delay:.20s">
         <span class="role-icon">💬</span>
-        <h3>Information & Routing</h3>
-        <p>Connect participants to the right people when questions arise.</p>
+        <h3>Information and Routing</h3>
+        <p>Be the go-to point for questions on the day. Connect participants to the right people fast.</p>
       </div>
-      <div class="role-card fade-up" style="transition-delay:.24s">
-        <span class="role-icon">🎽</span>
-        <h3>Merch & Survival Kit</h3>
-        <p>Make sure every participant gets their kit without a hitch.</p>
-      </div>
-      <div class="role-card fade-up" style="transition-delay:.28s">
-        <span class="role-icon">🔧</span>
-        <h3>Setup & Teardown</h3>
-        <p>Arrive early, stay sharp, close it out right.</p>
-      </div>
-      <div class="role-card fade-up" style="transition-delay:.32s">
-        <span class="role-icon">📋</span>
-        <h3>Management Reporting</h3>
-        <p>Stay in close contact with the EurHackNL team throughout both days.</p>
-      </div>
+    </div>
+
+    <div class="roles-note fade-up" style="transition-delay:.20s">
+      <p>After you apply, we will schedule a short meetup with all volunteers before the event to go through every position in detail, answer questions, and make sure everyone feels fully prepared.</p>
     </div>
   </div>
 </section>
@@ -801,10 +798,6 @@
         <div class="perk-icon">🎫</div>
         <p>Free access to the full event</p>
       </div>
-      <div class="perk-pill fade-up" style="transition-delay:.08s">
-        <div class="perk-icon">👕</div>
-        <p>Volunteer t-shirt + merch kit</p>
-      </div>
       <div class="perk-pill fade-up" style="transition-delay:.12s">
         <div class="perk-icon">🤝</div>
         <p>Network with 500+ builders and 15+ sponsors</p>
@@ -815,7 +808,7 @@
       </div>
       <div class="perk-pill fade-up" style="transition-delay:.20s">
         <div class="perk-icon">🔍</div>
-        <p>Behind-the-scenes look at the Netherlands' biggest student hackathon</p>
+        <p>Behind-the-scenes look at the Netherlands biggest student hackathon</p>
       </div>
     </div>
   </div>
